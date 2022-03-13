@@ -4,4 +4,7 @@
   * [LISA](https://github.com/epfl-lara/lisa) is a project to develop proof assistant based on set theory
   * [Scallion](https://github.com/epfl-lara/scallion) is a Scala library for provably correct parsing and pretty printing
 
-  For more information, see [the organization's GitHub index](https://github.com/epfl-lara/).
+For more information on software, see [the organization's GitHub](https://github.com/epfl-lara/).
+
+See also the [EPFL page of LARA](https://lara.epfl.ch/w/).
+
