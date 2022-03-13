@@ -8,3 +8,4 @@ For more information on software, see [the organization's GitHub](https://github
 
 See also the [EPFL page of LARA](https://lara.epfl.ch/w/).
 
+{% include research.html %}
