@@ -15,7 +15,7 @@ For more information on software, see [the organization's GitHub](https://github
 
 ## Support
 
-{% include support.html %}
+{% include support_page.html %}
 
 ## More information
 
