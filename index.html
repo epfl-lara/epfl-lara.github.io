@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LARA — Laboratory for Automated Reasoning and Analysis (EPFL)</title>
+  <meta name="description" content="Laboratory for Automated Reasoning and Analysis (LARA) at EPFL, led by Prof. Viktor Kunčak. Research in AI for mathematics, theorem proving in Lean 4, automated reasoning, and formally verified software." />
+  <link rel="icon" type="image/png" href="assets/img/lara-hf-logo.png" />
+  <link rel="apple-touch-icon" href="assets/img/lara-hf-logo.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LARA — Laboratory for Automated Reasoning and Analysis (EPFL)" />
+  <meta property="og:description" content="AI for mathematics, theorem proving in Lean 4, automated reasoning, and verified software at EPFL." />
+  <meta property="og:image" content="https://epfl-lara.github.io/assets/img/lara-hf-logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/proof-card.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <img src="assets/img/epfl-logo.svg" alt="EPFL" class="epfl-logo" />
+        <span class="brand-sep"></span>
+        <span>LARA</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#research">Research</a></li>
+          <li><a href="#people">People</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#join">Teaching &amp; Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Intro -->
+    <section class="intro">
+      <h1>Laboratory for Automated Reasoning and Analysis</h1>
+      <div class="intro-grid">
+        <div class="intro-text">
+          <p>
+            LARA develops AI systems for mathematical reasoning and tools for constructing formally verified software. We work on autoformalization and neural theorem proving in Lean 4, deductive verification of Scala programs, and the logical foundations of proof assistants. The lab is part of the <a href="https://ic.epfl.ch" target="_blank" rel="noopener">School of Computer and Communication Sciences</a> at <a href="https://www.epfl.ch" target="_blank" rel="noopener">EPFL</a> and is led by <a href="https://lara.epfl.ch/~kuncak/" target="_blank" rel="noopener">Viktor Kunčak</a>.
+          </p>
+          <div class="intro-links">
+            <a href="https://github.com/epfl-lara" target="_blank" rel="noopener">GitHub (epfl-lara)</a>
+            &nbsp;·&nbsp;
+            <a href="https://huggingface.co/EPFL-LARA" target="_blank" rel="noopener">Hugging Face (EPFL-LARA)</a>
+            &nbsp;·&nbsp;
+            <a href="https://aiformath.epfl.ch/" target="_blank" rel="noopener">AI for Math @ EPFL</a>
+          </div>
+        </div>
+
+        <figure class="proof-card" role="img" aria-label="A theorem stated in English, formalized in Lean 4, proved, and machine-checked">
+          <div class="proof-bar">
+            <span class="proof-lang">Lean 4 · Mathlib</span>
+            <span class="proof-status" data-state="ok">goals accomplished</span>
+          </div>
+          <pre class="proof-code"><code><span class="c">-- 1 + 3 + 5 + ⋯ + (2n − 1) = n²</span>
+<span class="k">theorem</span> odd_sum (n : ℕ) :
+    ∑ i ∈ range n, (2 * i + 1) = n ^ 2 := <span class="k">by</span>
+  <span class="t">induction</span> n <span class="k">with</span>
+  | zero => <span class="t">simp</span>
+  | succ n ih =>
+    <span class="t">rw</span> [sum_range_succ, ih]; <span class="t">ring</span></code></pre>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research">
+      <h2>Research</h2>
+      <div class="research-grid">
+        <div class="research-col">
+          <h3>AI for mathematics</h3>
+          <p>
+            We build agentic workflows, neural theorem provers, learned compiler feedback models, and benchmarks for formal mathematics in Lean 4. Together with colleagues across EPFL, we co-lead the <a href="https://aiformath.epfl.ch/" target="_blank" rel="noopener">AI for Math @ EPFL</a> initiative on document-level autoformalization.
+          </p>
+          <div class="meta">
+            <a href="https://aiformath.epfl.ch/" target="_blank" rel="noopener">AI for Math</a> ·
+            <a href="https://huggingface.co/EPFL-LARA" target="_blank" rel="noopener">Models &amp; Datasets</a> ·
+            <a href="https://github.com/augustepoiroux/LeanInteract" target="_blank" rel="noopener">LeanInteract</a> ·
+            <a href="https://github.com/epfl-lara/LeanFlow" target="_blank" rel="noopener">LeanFlow</a> ·
+            <a href="https://github.com/epfl-lara/LeanProbe" target="_blank" rel="noopener">LeanProbe</a> ·
+            <a href="https://github.com/augustepoiroux/RLMEval" target="_blank" rel="noopener">RLMEval</a>
+          </div>
+        </div>
+
+        <div class="research-col">
+          <h3>Verified software</h3>
+          <p>
+            We design deductive verification tools, decision procedures, and refinement type systems to prove that real-world Scala programs and libraries meet their specifications.
+          </p>
+          <div class="meta">
+            <a href="https://github.com/epfl-lara/stainless" target="_blank" rel="noopener">Stainless</a> ·
+            <a href="https://github.com/epfl-lara/inox" target="_blank" rel="noopener">Inox</a> ·
+            <a href="https://github.com/epfl-lara/bolts" target="_blank" rel="noopener">Bolts &amp; Ziplex</a> ·
+            <a href="https://github.com/epfl-lara/scallion" target="_blank" rel="noopener">Scallion</a>
+          </div>
+        </div>
+
+        <div class="research-col">
+          <h3>Logic &amp; proof assistants</h3>
+          <p>
+            We study foundational proof systems based on first-order logic and set theory, polynomial-time proof normalization in ortholattices, and mechanized mathematics.
+          </p>
+          <div class="meta">
+            <a href="https://github.com/epfl-lara/lisa" target="_blank" rel="noopener">LISA</a> ·
+            <a href="https://github.com/epfl-lara/jordan-curve-theorem" target="_blank" rel="noopener">Jordan Curve Theorem</a> ·
+            <a href="https://arxiv.org/abs/2605.16421" target="_blank" rel="noopener">Orthologic</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Updates -->
+    <section id="updates">
+      <h2>Recent work</h2>
+      <div class="news-list">
+        <div class="news-row">
+          <span class="news-date">Oct 2026</span>
+          <div>
+            <em>Learning Lean Feedback for Efficient Proof-Candidate Evaluation on GPUs</em> accepted at NeurIPS VeriCodeGen; open models and a 4.8M Lean 4 corpus are available on <a href="https://huggingface.co/EPFL-LARA" target="_blank" rel="noopener">Hugging Face</a>.
+          </div>
+        </div>
+        <div class="news-row">
+          <span class="news-date">Jul 2026</span>
+          <div>
+            Preprints and code released for <a href="https://arxiv.org/abs/2607.20503" target="_blank" rel="noopener">LeanFlow</a> (workflow-driven Lean autoformalization) and the mechanized <a href="https://arxiv.org/abs/2607.01734" target="_blank" rel="noopener">Jordan Curve Theorem</a> in LISA.
+          </div>
+        </div>
+        <div class="news-row">
+          <span class="news-date">May 2026</span>
+          <div>
+            <em><a href="https://arxiv.org/abs/2605.08369" target="_blank" rel="noopener">First-Class Refinement Types for Scala</a></em> to appear at OOPSLA 2026.
+          </div>
+        </div>
+        <div class="news-row">
+          <span class="news-date">Spring 2026</span>
+          <div>
+            New works on Lean 4 formalization and evaluation: <a href="https://arxiv.org/abs/2604.23468" target="_blank" rel="noopener">Sphere Packing in Dimension 8</a>, <a href="https://arxiv.org/abs/2604.19459" target="_blank" rel="noopener">Do LLMs Game Formalization?</a>, and <a href="https://arxiv.org/abs/2603.02668" target="_blank" rel="noopener">SorryDB</a>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- People -->
+    <section id="people">
+      <h2>People</h2>
+
+      <div class="group-label">Faculty &amp; PhD students</div>
+      <div class="people-grid">
+        <div class="person">
+          <a href="https://lara.epfl.ch/~kuncak/" target="_blank" rel="noopener">
+            <img src="assets/img/people/viktor.png" alt="Viktor Kunčak" />
+          </a>
+          <div class="person-name"><a href="https://lara.epfl.ch/~kuncak/" target="_blank" rel="noopener">Viktor Kunčak</a></div>
+          <div class="person-role">Associate Professor, Lab Head</div>
+        </div>
+
+        <div class="person">
+          <a href="https://people.epfl.ch/auguste.poiroux" target="_blank" rel="noopener">
+            <img src="assets/img/people/auguste.jpg" alt="Auguste Poiroux" />
+          </a>
+          <div class="person-name"><a href="https://people.epfl.ch/auguste.poiroux" target="_blank" rel="noopener">Auguste Poiroux</a></div>
+          <div class="person-role">PhD student (w/ A. Bosselut)</div>
+        </div>
+
+        <div class="person">
+          <a href="https://lemmy00.github.io/resume/" target="_blank" rel="noopener">
+            <img src="assets/img/people/lazar.jpg" alt="Lazar Milikić" />
+          </a>
+          <div class="person-name"><a href="https://lemmy00.github.io/resume/" target="_blank" rel="noopener">Lazar Milikić</a></div>
+          <div class="person-role">PhD student</div>
+        </div>
+
+        <div class="person">
+          <a href="https://sankalp.gambhir.gg/" target="_blank" rel="noopener">
+            <img src="assets/img/people/sankalp.jpg" alt="Sankalp Gambhir" />
+          </a>
+          <div class="person-name"><a href="https://sankalp.gambhir.gg/" target="_blank" rel="noopener">Sankalp Gambhir</a></div>
+          <div class="person-role">PhD student</div>
+        </div>
+
+        <div class="person">
+          <a href="https://samuelchassot.github.io/" target="_blank" rel="noopener">
+            <img src="assets/img/people/samuel.jpg" alt="Samuel Chassot" />
+          </a>
+          <div class="person-name"><a href="https://samuelchassot.github.io/" target="_blank" rel="noopener">Samuel Chassot</a></div>
+          <div class="person-role">PhD student</div>
+        </div>
+
+        <div class="person">
+          <a href="https://matt.bovel.net/" target="_blank" rel="noopener">
+            <img src="assets/img/people/matthieu.png" alt="Matt Bovel" />
+          </a>
+          <div class="person-name"><a href="https://matt.bovel.net/" target="_blank" rel="noopener">Matt Bovel</a></div>
+          <div class="person-role">PhD student (w/ M. Odersky)</div>
+        </div>
+      </div>
+
+      <div class="group-label">Staff</div>
+      <div class="people-grid">
+        <div class="person">
+          <a href="https://people.epfl.ch/fabien.salvi" target="_blank" rel="noopener">
+            <img src="assets/img/people/fabien.jpg" alt="Fabien Salvi" />
+          </a>
+          <div class="person-name"><a href="https://people.epfl.ch/fabien.salvi" target="_blank" rel="noopener">Fabien Salvi</a></div>
+          <div class="person-role">System Manager</div>
+        </div>
+
+        <div class="person">
+          <a href="https://people.epfl.ch/sylvie.buchard" target="_blank" rel="noopener">
+            <img src="assets/img/people/sylvie.jpg" alt="Sylvie Buchard" />
+          </a>
+          <div class="person-name"><a href="https://people.epfl.ch/sylvie.buchard" target="_blank" rel="noopener">Sylvie Buchard</a></div>
+          <div class="person-role">Administrative Assistant</div>
+        </div>
+      </div>
+
+      <div class="group-label">Alumni</div>
+      <ul class="alumni-list">
+        <li>Simon Guilloud <span>(PhD)</span></li>
+        <li>Dragana Milovančević <span>(PhD)</span></li>
+        <li>Mario Bucev <span>(PhD)</span></li>
+        <li>Rodrigo Raya <span>(PhD)</span></li>
+        <li>Jad Hamza <span>(PhD / Postdoc)</span></li>
+        <li>Romain Edelmann <span>(PhD)</span></li>
+        <li>Georg S. Schmid <span>(PhD)</span></li>
+        <li>Nicolas Voirol <span>(PhD)</span></li>
+        <li>Andreas Pavlogiannis <span>(Postdoc)</span></li>
+        <li>Mikaël Mayer <span>(PhD)</span></li>
+        <li>Ravichandhran Madhavan <span>(PhD)</span></li>
+        <li>Etienne Kneuss <span>(PhD)</span></li>
+        <li>Andrew J. Reynolds <span>(Postdoc)</span></li>
+        <li>Eva Darulova <span>(PhD)</span></li>
+        <li>Ruzica Piskac <span>(PhD)</span></li>
+        <li>Philippe Suter <span>(PhD)</span></li>
+      </ul>
+      <p class="meta" style="margin-top: 12px;">
+        See also the <a href="https://lara.epfl.ch/~kuncak/students.html" target="_blank" rel="noopener">complete list of past PhD students and dissertations</a>.
+      </p>
+    </section>
+
+    <!-- Selected Publications -->
+    <section id="publications">
+      <h2>Selected recent publications</h2>
+      <div class="pub-list">
+        <div>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2610.21881" target="_blank" rel="noopener">Learning Lean Feedback for Efficient Proof-Candidate Evaluation on GPUs</a>
+          </div>
+          <div class="pub-authors">Lazar Milikić, Etienne Bamas, Emmanuel Abbe, Viktor Kunčak</div>
+          <div class="pub-meta">
+            NeurIPS 2026 VeriCodeGen Workshop ·
+            <a href="https://arxiv.org/abs/2610.21881" target="_blank" rel="noopener">arXiv</a> ·
+            <a href="https://huggingface.co/EPFL-LARA" target="_blank" rel="noopener">models &amp; datasets</a> ·
+            <a href="https://github.com/epfl-lara/learning-lean-feedback" target="_blank" rel="noopener">code</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2607.20503" target="_blank" rel="noopener">LeanFlow: A Case Study in Workflow-Driven Lean Autoformalization</a>
+          </div>
+          <div class="pub-authors">Lazar Milikić, Simon Guilloud, Khanh Nguyen, Viktor Kunčak</div>
+          <div class="pub-meta">
+            Preprint 2026 ·
+            <a href="https://arxiv.org/abs/2607.20503" target="_blank" rel="noopener">arXiv</a> ·
+            <a href="https://github.com/epfl-lara/LeanFlow" target="_blank" rel="noopener">code</a> ·
+            <a href="https://github.com/epfl-lara/AutoformalizedProjects" target="_blank" rel="noopener">formalizations</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2605.08369" target="_blank" rel="noopener">First-Class Refinement Types for Scala</a>
+          </div>
+          <div class="pub-authors">Matt Bovel, Viktor Kunčak, Martin Odersky</div>
+          <div class="pub-meta">
+            OOPSLA 2026 ·
+            <a href="https://arxiv.org/abs/2605.08369" target="_blank" rel="noopener">arXiv</a> ·
+            <a href="https://doi.org/10.1145/3839541" target="_blank" rel="noopener">DOI</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2607.01734" target="_blank" rel="noopener">Reformalization of the Jordan Curve Theorem</a>
+          </div>
+          <div class="pub-authors">Simon Guilloud, Sankalp Gambhir, Samuel Chassot</div>
+          <div class="pub-meta">
+            Preprint 2026 ·
+            <a href="https://arxiv.org/abs/2607.01734" target="_blank" rel="noopener">arXiv</a> ·
+            <a href="https://github.com/epfl-lara/jordan-curve-theorem" target="_blank" rel="noopener">code</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2604.23468" target="_blank" rel="noopener">Progress in Formalizing Sphere Packing in Dimension 8</a>
+          </div>
+          <div class="pub-authors">Sidharth Hariharan, Christopher Birkbeck, Seewoo Lee, Ho Kiu Gareth Ma, Bhavik Mehta, Auguste Poiroux, Maryna Viazovska</div>
+          <div class="pub-meta">
+            Preprint 2026 ·
+            <a href="https://arxiv.org/abs/2604.23468" target="_blank" rel="noopener">arXiv</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2604.19459" target="_blank" rel="noopener">Do LLMs Game Formalization? Evaluating Faithfulness in Logical Reasoning</a>
+          </div>
+          <div class="pub-authors">Kyuhee Kim, Auguste Poiroux, Antoine Bosselut</div>
+          <div class="pub-meta">
+            Preprint 2026 ·
+            <a href="https://arxiv.org/abs/2604.19459" target="_blank" rel="noopener">arXiv</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2510.25427" target="_blank" rel="noopener">RLMEval: Evaluating Research-Level Neural Theorem Proving</a>
+          </div>
+          <div class="pub-authors">Auguste Poiroux, Antoine Bosselut, Viktor Kunčak</div>
+          <div class="pub-meta">
+            Preprint 2025 ·
+            <a href="https://arxiv.org/abs/2510.25427" target="_blank" rel="noopener">arXiv</a> ·
+            <a href="https://github.com/augustepoiroux/RLMEval" target="_blank" rel="noopener">code</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2510.18479" target="_blank" rel="noopener">Formally Verified Linear-Time Invertible Lexing</a>
+          </div>
+          <div class="pub-authors">Samuel Chassot, Viktor Kunčak</div>
+          <div class="pub-meta">
+            Preprint 2025 ·
+            <a href="https://arxiv.org/abs/2510.18479" target="_blank" rel="noopener">arXiv</a> ·
+            <a href="https://github.com/epfl-lara/bolts" target="_blank" rel="noopener">code</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2507.11167" target="_blank" rel="noopener">LISA — A Modern Proof System</a>
+          </div>
+          <div class="pub-authors">Simon Guilloud, Sankalp Gambhir, Viktor Kunčak</div>
+          <div class="pub-meta">
+            Preprint 2025 ·
+            <a href="https://arxiv.org/abs/2507.11167" target="_blank" rel="noopener">arXiv</a> ·
+            <a href="https://github.com/epfl-lara/lisa" target="_blank" rel="noopener">code</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2406.07222" target="_blank" rel="noopener">Reliable Evaluation and Benchmarks for Statement Autoformalization</a>
+          </div>
+          <div class="pub-authors">Auguste Poiroux, Gail Weiss, Viktor Kunčak, Antoine Bosselut</div>
+          <div class="pub-meta">
+            EMNLP 2024 ·
+            <a href="https://arxiv.org/abs/2406.07222" target="_blank" rel="noopener">arXiv</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="meta" style="margin-top: 24px;">
+        Full publication lists:
+        <a href="https://dblp.org/pid/k/ViktorKuncak.html" target="_blank" rel="noopener">DBLP</a> ·
+        <a href="https://scholar.google.com/citations?user=M92c7nEAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+      </p>
+    </section>
+
+    <!-- Teaching & Joining -->
+    <section id="join">
+      <h2>Teaching &amp; joining</h2>
+      <div class="join-grid">
+        <div class="join-block">
+          <p>
+            <strong>Courses.</strong> We teach <a href="https://github.com/epfl-lara/cs550" target="_blank" rel="noopener">CS-550: Formal Verification</a> (with <a href="https://tube.switch.ch/channels/f2d4e01d" target="_blank" rel="noopener">lecture videos on SwitchTube</a>) as well as undergraduate courses in logic, discrete mathematics, and software construction at EPFL.
+          </p>
+          <p>
+            <strong>Tutorials.</strong> For an introduction to verifying Scala programs with Stainless, see our <a href="https://epfl-lara.github.io/asplos2022tutorial/" target="_blank" rel="noopener">ASPLOS tutorial</a> and the <a href="https://epfl-lara.github.io/stainless/" target="_blank" rel="noopener">Stainless documentation</a>.
+          </p>
+        </div>
+
+        <div class="join-block">
+          <p>
+            <strong>EPFL students.</strong> If you are looking for a BS/MS semester project or Master's thesis in AI for mathematics, Lean 4 autoformalization, or program verification, email <a href="mailto:viktor.kuncak@epfl.ch">Viktor Kunčak</a> or one of the PhD students with your CV and transcript.
+          </p>
+          <p>
+            <strong>Prospective PhD students.</strong> PhD admissions are handled through the <a href="https://www.epfl.ch/education/phd/edic-computer-and-communication-sciences/" target="_blank" rel="noopener">EDIC doctoral program</a>. For inquiries, contact <a href="mailto:viktor.kuncak@epfl.ch">viktor.kuncak@epfl.ch</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        EPFL IC IINFCOM LARA · Bâtiment INR 318, Station 14 · CH-1015 Lausanne, Switzerland ·
+        <a href="mailto:viktor.kuncak@epfl.ch">viktor.kuncak@epfl.ch</a>
+      </div>
+      <div>
+        <a href="https://github.com/epfl-lara" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="https://huggingface.co/EPFL-LARA" target="_blank" rel="noopener">Hugging Face</a> ·
+        <a href="https://aiformath.epfl.ch/" target="_blank" rel="noopener">AI for Math @ EPFL</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
