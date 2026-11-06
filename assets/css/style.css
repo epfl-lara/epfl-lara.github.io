@@ -107,6 +107,7 @@ a:hover {
 
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 24px;
   list-style: none;
@@ -310,7 +311,7 @@ h3 {
 
 .news-row {
   display: grid;
-  grid-template-columns: 96px 1fr;
+  grid-template-columns: 104px minmax(0, 1fr);
   gap: 16px;
   align-items: baseline;
   font-size: 16px;
@@ -319,6 +320,28 @@ h3 {
 .news-date {
   font-size: 14px;
   color: var(--muted);
+}
+
+.news-archive {
+  max-width: 820px;
+  margin-top: 24px;
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+}
+
+.news-archive summary {
+  width: fit-content;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.news-archive summary:hover {
+  color: var(--accent);
+}
+
+.news-archive[open] .news-list {
+  margin-top: 20px;
 }
 
 /* People */
