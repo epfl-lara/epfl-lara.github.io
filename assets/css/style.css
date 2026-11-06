@@ -375,6 +375,12 @@ h3 {
   margin-bottom: 10px;
 }
 
+.person img.portrait-contain {
+  object-fit: contain;
+  object-position: center;
+  background: #eef2ed;
+}
+
 .person-name {
   font-size: 15px;
   font-weight: 600;
